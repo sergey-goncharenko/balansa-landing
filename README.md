@@ -1,36 +1,124 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+﻿# Balansa Landing Page
 
-## Getting Started
+🏦 **Ambient Financial AI** - Your AI Financial Guardian & Coach
 
-First, run the development server:
+## Quick Start
 
-```bash
+\\\ash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+\\\
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Framework**: Next.js 14+ (App Router)
+- **Language**: TypeScript
+- **Styling**: TailwindCSS
+- **Animations**: Framer Motion
+- **Deployment**: Vercel-ready
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+\\\
+src/
+├── app/
+│   ├── page.tsx          # Main landing page
+│   ├── layout.tsx        # Root layout with metadata
+│   └── api/signup/       # Email signup API endpoint
+├── components/
+│   ├── Hero.tsx          # Hero section with CTAs
+│   ├── GuardianMode.tsx  # Real-time transaction monitoring
+│   ├── CoachMode.tsx     # Daily/weekly financial briefings
+│   ├── AdvisorMode.tsx   # ChatGPT/Copilot integration demos
+│   ├── BuilderMode.tsx   # n8n workflow automation
+│   ├── Privacy.tsx       # Privacy & security features
+│   ├── Vision.tsx        # Company vision & roadmap
+│   ├── SignupForm.tsx    # Email capture form
+│   └── Footer.tsx        # Footer with links
+└── lib/
+    └── animations.ts     # Shared Framer Motion variants
+\\\
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Features
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 🛡️ Guardian Mode
+Real-time transaction monitoring with AI-powered alerts for:
+- Fraud detection
+- Duplicate charges
+- Subscription renewals
+- Salary notifications
 
-## Deploy on Vercel
+### 📊 Coach Mode
+Scheduled financial briefings:
+- Morning financial snapshots
+- Weekly spending summaries
+- Goal progress tracking
+- Cashflow projections
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 💬 Advisor Mode
+Conversational AI integration:
+- ChatGPT plugin mockup
+- Microsoft Copilot integration
+- Natural language financial queries
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 🔧 Builder Mode
+Automation capabilities:
+- n8n workflow examples
+- Custom financial rules
+- Integration possibilities
+
+### 🔐 Privacy
+- Self-hosted option
+- Local LLM support (Ollama)
+- No data selling
+- Open source core
+
+## Customization
+
+### Colors
+The color scheme uses Tailwind's slate/indigo palette:
+- Primary: Indigo/Purple gradients
+- Success: Emerald
+- Warning: Amber
+- Danger: Red
+
+### Animations
+All animations are defined in \src/lib/animations.ts\:
+- \adeInUp\ - Standard entrance animation
+- \staggerContainer\ - Sequential children animation
+- \slideInLeft/Right\ - Horizontal entrances
+
+## Deployment
+
+### Vercel (Recommended)
+\\\ash
+npm install -g vercel
+vercel
+\\\
+
+### Docker
+\\\dockerfile
+FROM node:20-alpine
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci
+COPY . .
+RUN npm run build
+CMD [\"npm\", \"start\"]
+\\\
+
+## Email Signups
+
+Currently stores signups in \data/signups.json\ (MVP).
+
+For production, replace with:
+- Supabase
+- PostgreSQL
+- Mailchimp API
+- ConvertKit
+
+## License
+
+MIT
