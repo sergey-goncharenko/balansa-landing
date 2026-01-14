@@ -11,14 +11,14 @@ export default function Header() {
           href="#"
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="flex items-center gap-3"
+          className="flex items-center justify-start gap-2 sm:gap-3 flex-shrink-0"
         >
           {/* Icon mark - square with balance line */}
-          <div className="w-8 h-8 border border-[var(--color-primary)]/40 flex items-center justify-center">
-            <div className="w-5 h-[1px] bg-[var(--color-primary)]" />
+          <div className="w-7 h-7 sm:w-8 sm:h-8 border border-[var(--color-primary)]/40 flex items-center justify-center flex-shrink-0">
+            <div className="w-4 sm:w-5 h-[1px] bg-[var(--color-primary)]" />
           </div>
-          {/* Wordmark */}
-          <span className="text-[var(--color-primary)] font-light tracking-[0.3em] text-lg hidden sm:inline">BALANSA</span>
+          {/* Wordmark - always visible */}
+          <span className="text-[var(--color-primary)] font-light tracking-[0.2em] sm:tracking-[0.3em] text-base sm:text-lg whitespace-nowrap overflow-visible max-w-full">BALANSA</span>
         </motion.a>
 
         {/* CTA */}

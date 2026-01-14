@@ -6,11 +6,11 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-6 md:px-6">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           {/* Logo */}
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 border border-[var(--color-primary)]/40 flex items-center justify-center">
-              <div className="w-5 h-[1px] bg-[var(--color-primary)]/80" />
+          <div className="flex items-center justify-start gap-2 sm:gap-3 flex-shrink-0">
+            <div className="w-7 h-7 sm:w-8 sm:h-8 border border-[var(--color-primary)]/40 flex items-center justify-center flex-shrink-0">
+              <div className="w-4 sm:w-5 h-[1px] bg-[var(--color-primary)]/80" />
             </div>
-            <span className="text-[var(--color-primary)] font-light tracking-[0.3em] text-lg">BALANSA</span>
+            <span className="text-[var(--color-primary)] font-light tracking-[0.2em] sm:tracking-[0.3em] text-base sm:text-lg whitespace-nowrap overflow-visible max-w-full">BALANSA</span>
           </div>
           <div className="flex flex-wrap justify-center gap-6 md:gap-8 text-[var(--color-text)]/60 text-sm">
             <a href="#guardian" className="hover:text-[var(--color-primary)] transition-colors">Features</a>
