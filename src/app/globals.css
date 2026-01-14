@@ -56,12 +56,13 @@ p {
   }
 }
 
-/* Fallback for browsers where Framer Motion animations may not trigger */
-@supports not (animation-timeline: scroll()) {
-  section {
-    opacity: 1 !important;
-    transform: none !important;
-  }
+/* Force all content to be visible - critical fallback for Edge and other browsers */
+section > div {
+  opacity: 1 !important;
+}
+
+section [style*="opacity: 0"] {
+  opacity: 1 !important;
 }
 
 /* Ensure motion elements are visible after short delay as fallback */
