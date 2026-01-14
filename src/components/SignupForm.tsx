@@ -33,10 +33,9 @@ export default function SignupForm() {
   };
 
   return (
-    <section id="signup" className="py-20 md:py-28 bg-[var(--color-background)] relative overflow-hidden">
-      <div className="absolute inset-0">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[var(--color-accent)]/5 rounded-full blur-3xl" />
-      </div>
+    <section id="signup" className="py-20 md:py-28 bg-gradient-to-b from-[var(--color-background)] via-white to-[var(--color-background)] relative overflow-hidden">
+      {/* Subtle radial accent - simplified for cross-browser support */}
+      <div className="absolute inset-0 bg-gradient-to-br from-transparent via-[var(--color-accent)]/5 to-transparent" />
 
       <div className="max-w-4xl mx-auto px-5 md:px-6 relative z-10">
         <motion.div 

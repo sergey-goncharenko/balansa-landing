@@ -7,10 +7,10 @@ export default function Hero() {
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-white pt-20 pb-16 md:pb-24">
       {/* Subtle background pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(74,144,226,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(74,144,226,0.02)_1px,transparent_1px)] bg-[size:48px_48px]" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(74,144,226,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(74,144,226,0.03)_1px,transparent_1px)] bg-[size:40px_40px]" />
       
-      {/* Soft accent glow */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-[var(--color-secondary)]/5 rounded-full blur-3xl" />
+      {/* Simple gradient overlay - no blur needed */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white via-[var(--color-background)] to-white opacity-60" />
       
       <motion.div
         variants={staggerContainer}
