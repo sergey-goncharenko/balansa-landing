@@ -9,7 +9,7 @@ export default function BuilderMode() {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section ref={ref} className="py-24 bg-gradient-to-b from-slate-900 to-slate-950">
+    <section ref={ref} className="py-[var(--spacing-xl)] bg-[var(--color-background)]">
       <div className="max-w-6xl mx-auto px-6">
         <motion.div
           variants={staggerContainer}
@@ -17,46 +17,69 @@ export default function BuilderMode() {
           animate={isInView ? 'visible' : 'hidden'}
           className="grid lg:grid-cols-2 gap-12 items-center"
         >
-          <motion.div variants={fadeInUp}>
-            <span className="inline-block px-3 py-1 rounded-full bg-orange-500/10 text-orange-400 text-sm font-medium mb-4">
-              Builder Mode
-            </span>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Automate Your
-              <span className="block text-orange-400">Financial Rules</span>
-            </h2>
-            <p className="text-lg text-slate-300 mb-8">
-              Build custom automations with n8n. Connect Balansa to any service.
-            </p>
-            <div className="space-y-3">
-              <div className="flex items-center gap-3 p-3 bg-slate-800/50 rounded-lg border border-slate-700/50">
-                <span>If Groceries over EUR 300/week</span>
-                <span className="text-emerald-400">then</span>
-                <span>Send budget warning</span>
+          <motion.div variants={fadeInUp} className="order-2 lg:order-1 bg-white rounded-2xl border border-[var(--color-primary)]/10 p-6 shadow-lg">
+            <div className="flex items-center justify-between mb-6 pb-4 border-b border-[var(--color-primary)]/10">
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 rounded bg-orange-500 flex items-center justify-center text-white font-bold text-xs">📊</div>
+                <span className="text-[var(--color-primary)] font-medium">Financial Projection</span>
               </div>
-              <div className="flex items-center gap-3 p-3 bg-slate-800/50 rounded-lg border border-slate-700/50">
-                <span>If Salary arrives</span>
-                <span className="text-emerald-400">then</span>
-                <span>Auto-transfer to savings</span>
+              <span className="text-[var(--color-accent)] text-xs font-medium">Auto-updates</span>
+            </div>
+            <div className="space-y-4">
+              <div className="flex justify-between items-center">
+                <span className="text-[var(--color-text)]/70 text-sm">Current Savings</span>
+                <span className="text-[var(--color-primary)] font-semibold">€4,200</span>
+              </div>
+              <div className="w-full bg-[var(--color-background)] rounded-full h-2">
+                <div className="bg-[var(--color-accent)] h-2 rounded-full" style={{ width: '70%' }}></div>
+              </div>
+              <div className="flex justify-between items-center text-sm">
+                <span className="text-[var(--color-text)]/50">Goal: €6,000</span>
+                <span className="text-[var(--color-accent)] font-medium">On track for August</span>
               </div>
             </div>
           </motion.div>
 
-          <motion.div variants={fadeInUp} className="bg-slate-900/90 rounded-2xl border border-slate-700 p-6">
-            <div className="flex items-center justify-between mb-6 pb-4 border-b border-slate-700">
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded bg-orange-500 flex items-center justify-center text-white font-bold text-sm">n8n</div>
-                <span className="text-white font-medium">Budget Alert Workflow</span>
-              </div>
-              <span className="text-emerald-400 text-xs">Active</span>
-            </div>
-            <div className="flex items-center justify-around py-8">
-              <div className="w-14 h-14 rounded-xl bg-blue-500 flex items-center justify-center text-2xl">TX</div>
-              <div className="text-slate-500">then</div>
-              <div className="w-14 h-14 rounded-xl bg-amber-500 rotate-45 flex items-center justify-center"><span className="-rotate-45">IF</span></div>
-              <div className="text-slate-500">then</div>
-              <div className="w-14 h-14 rounded-xl bg-emerald-500 flex items-center justify-center text-2xl">OK</div>
-            </div>
+          <motion.div variants={fadeInUp} className="order-1 lg:order-2">
+            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-100 text-orange-600 text-sm font-medium mb-4">
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+              </svg>
+              Builder Mode
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-[var(--color-primary)] mb-6">
+              Plan Ahead
+            </h2>
+            <p className="text-lg text-[var(--color-text)]/70 mb-6 leading-relaxed">
+              Helps you plan ahead with simple, realistic projections that adapt 
+              automatically as your financial situation changes.
+            </p>
+            <ul className="space-y-3">
+              <li className="flex items-center gap-3 text-[var(--color-text)]/80">
+                <span className="w-5 h-5 rounded-full bg-orange-100 flex items-center justify-center">
+                  <svg className="w-3 h-3 text-orange-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                </span>
+                Goal setting & tracking
+              </li>
+              <li className="flex items-center gap-3 text-[var(--color-text)]/80">
+                <span className="w-5 h-5 rounded-full bg-orange-100 flex items-center justify-center">
+                  <svg className="w-3 h-3 text-orange-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                </span>
+                Adaptive projections
+              </li>
+              <li className="flex items-center gap-3 text-[var(--color-text)]/80">
+                <span className="w-5 h-5 rounded-full bg-orange-100 flex items-center justify-center">
+                  <svg className="w-3 h-3 text-orange-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                </span>
+                Scenario planning
+              </li>
+            </ul>
           </motion.div>
         </motion.div>
       </div>

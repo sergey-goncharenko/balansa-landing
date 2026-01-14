@@ -9,57 +9,75 @@ export default function AdvisorMode() {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section ref={ref} className="py-24 bg-slate-900">
+    <section ref={ref} className="py-[var(--spacing-xl)] bg-white">
       <div className="max-w-6xl mx-auto px-6">
         <motion.div
           variants={staggerContainer}
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
-          className="text-center mb-16"
+          className="grid lg:grid-cols-2 gap-12 items-center"
         >
-          <motion.span variants={fadeInUp} className="inline-block px-3 py-1 rounded-full bg-purple-500/10 text-purple-400 text-sm font-medium mb-4">
-            Advisor Mode
-          </motion.span>
-          <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Ask Anything About
-            <span className="block text-purple-400">Your Finances</span>
-          </motion.h2>
-          <motion.p variants={fadeInUp} className="text-lg text-slate-300 max-w-2xl mx-auto">
-            Have a conversation with your financial data through ChatGPT or Microsoft Copilot.
-          </motion.p>
-        </motion.div>
+          <motion.div variants={fadeInUp}>
+            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-100 text-purple-600 text-sm font-medium mb-4">
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+              </svg>
+              Advisor Mode
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-[var(--color-primary)] mb-6">
+              Contextual Recommendations
+            </h2>
+            <p className="text-lg text-[var(--color-text)]/70 mb-6 leading-relaxed">
+              Gives you smart recommendations when you need them: whether to pay early, 
+              wait, save, or adjust — all based on your actual financial situation.
+            </p>
+            <ul className="space-y-3">
+              <li className="flex items-center gap-3 text-[var(--color-text)]/80">
+                <span className="w-5 h-5 rounded-full bg-purple-100 flex items-center justify-center">
+                  <svg className="w-3 h-3 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                </span>
+                AI-powered analysis
+              </li>
+              <li className="flex items-center gap-3 text-[var(--color-text)]/80">
+                <span className="w-5 h-5 rounded-full bg-purple-100 flex items-center justify-center">
+                  <svg className="w-3 h-3 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                </span>
+                Natural language questions
+              </li>
+              <li className="flex items-center gap-3 text-[var(--color-text)]/80">
+                <span className="w-5 h-5 rounded-full bg-purple-100 flex items-center justify-center">
+                  <svg className="w-3 h-3 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                </span>
+                Works with ChatGPT & Copilot
+              </li>
+            </ul>
+          </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
-          <motion.div variants={fadeInUp} className="bg-slate-800/50 rounded-2xl border border-slate-700 p-6">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-emerald-500 flex items-center justify-center text-white font-bold">G</div>
-              <span className="text-white font-medium">ChatGPT + Balansa</span>
+          <motion.div variants={fadeInUp} className="bg-[var(--color-background)] rounded-2xl border border-[var(--color-primary)]/10 p-6 shadow-lg">
+            <div className="flex items-center gap-3 mb-4 pb-4 border-b border-[var(--color-primary)]/10">
+              <div className="w-8 h-8 rounded-lg bg-[var(--color-secondary)] flex items-center justify-center text-white font-bold text-sm">AI</div>
+              <span className="text-[var(--color-primary)] font-medium">Balansa Advisor</span>
             </div>
-            <div className="space-y-3">
+            <div className="space-y-4">
               <div className="flex justify-end">
-                <div className="bg-indigo-600 text-white p-3 rounded-2xl rounded-br-md max-w-xs">
-                  Can I afford a EUR 500 purchase?
+                <div className="bg-[var(--color-secondary)] text-white p-3 rounded-2xl rounded-br-md max-w-xs text-sm">
+                  Can I afford a €500 purchase this week?
                 </div>
               </div>
-              <div className="bg-slate-700 text-slate-100 p-3 rounded-2xl rounded-bl-md">
-                Based on your balance and upcoming bills, yes you can afford it comfortably.
+              <div className="bg-white border border-[var(--color-primary)]/10 text-[var(--color-text)] p-4 rounded-2xl rounded-bl-md text-sm">
+                <p className="mb-2">Based on your current balance and upcoming expenses:</p>
+                <p className="text-[var(--color-accent)] font-medium">✓ Yes, you can afford it comfortably.</p>
+                <p className="text-[var(--color-text)]/60 mt-2 text-xs">You&apos;ll still have €2,340 after your rent and utilities.</p>
               </div>
             </div>
           </motion.div>
-
-          <motion.div variants={fadeInUp} className="bg-slate-800/50 rounded-2xl border border-slate-700 p-6">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white font-bold">C</div>
-              <span className="text-white font-medium">Microsoft Copilot</span>
-            </div>
-            <div className="space-y-3">
-              <p className="text-slate-400 text-sm">@balansa How am I tracking toward my savings goal?</p>
-              <div className="bg-gradient-to-r from-blue-900/30 to-purple-900/30 border border-blue-500/20 rounded-lg p-4">
-                <p className="text-slate-200 text-sm">You have saved EUR 2,400 of your EUR 3,000 vacation goal (80%).</p>
-              </div>
-            </div>
-          </motion.div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
