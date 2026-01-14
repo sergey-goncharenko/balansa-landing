@@ -35,17 +35,17 @@ export default function SignupForm() {
   };
 
   return (
-    <section id="signup" ref={ref} className="py-[var(--spacing-xl)] bg-[var(--color-background)] relative overflow-hidden">
+    <section id="signup" ref={ref} className="py-20 md:py-28 bg-[var(--color-background)] relative overflow-hidden">
       <div className="absolute inset-0">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[var(--color-accent)]/5 rounded-full blur-3xl" />
       </div>
 
-      <div className="max-w-4xl mx-auto px-6 relative z-10">
+      <div className="max-w-4xl mx-auto px-5 md:px-6 relative z-10">
         <motion.div variants={staggerContainer} initial="hidden" animate={isInView ? 'visible' : 'hidden'} className="text-center">
-          <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold text-[var(--color-primary)] mb-6">
+          <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-semibold text-[var(--color-primary)] mb-4 md:mb-6">
             Ready to take control?
           </motion.h2>
-          <motion.p variants={fadeInUp} className="text-lg text-[var(--color-text)]/70 mb-10 max-w-2xl mx-auto">
+          <motion.p variants={fadeInUp} className="text-base md:text-lg text-[var(--color-text)]/70 mb-8 md:mb-10 max-w-2xl mx-auto leading-relaxed">
             Join the waitlist and be among the first to experience ambient financial AI.
           </motion.p>
 
@@ -56,13 +56,13 @@ export default function SignupForm() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
-                className="flex-1 px-6 py-4 bg-white border border-[var(--color-primary)]/10 rounded-xl text-[var(--color-text)] placeholder-[var(--color-text)]/40 focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]"
+                className="flex-1 px-6 py-4 bg-white border border-[var(--color-primary)]/10 rounded-xl text-[var(--color-text)] placeholder-[var(--color-text)]/40 focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] transition-shadow"
                 required
               />
               <button
                 type="submit"
                 disabled={status === 'loading'}
-                className="px-8 py-4 bg-[var(--color-accent)] hover:bg-[var(--color-accent)]/90 disabled:opacity-50 text-white font-semibold rounded-xl shadow-lg shadow-[var(--color-accent)]/25"
+                className="px-8 py-4 bg-[var(--color-accent)] hover:bg-[var(--color-accent)]/90 disabled:opacity-50 text-white font-semibold rounded-xl shadow-lg shadow-[var(--color-accent)]/25 w-full sm:w-auto transition-colors"
               >
                 {status === 'loading' ? 'Joining...' : 'Get Early Access'}
               </button>

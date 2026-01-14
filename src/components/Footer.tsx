@@ -2,8 +2,8 @@
 
 export default function Footer() {
   return (
-    <footer className="py-12 bg-[var(--color-primary)] border-t border-white/10">
-      <div className="max-w-6xl mx-auto px-6">
+    <footer className="py-10 md:py-12 bg-[var(--color-primary)] border-t border-white/10">
+      <div className="max-w-6xl mx-auto px-5 md:px-6">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           {/* Logo */}
           <div className="flex items-center gap-3">
@@ -12,11 +12,11 @@ export default function Footer() {
             </div>
             <span className="text-white font-light tracking-[0.3em] text-lg">BALANSA</span>
           </div>
-          <div className="flex flex-wrap justify-center gap-6 text-white/60 text-sm">
-            <a href="#guardian" className="hover:text-white transition">Features</a>
-            <a href="#" className="hover:text-white transition">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition">Terms</a>
-            <a href="mailto:hello@balansa.ee" className="hover:text-white transition">Contact</a>
+          <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-white/60 text-sm">
+            <a href="#guardian" className="hover:text-white transition-colors">Features</a>
+            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-white transition-colors">Terms</a>
+            <a href="mailto:hello@balansa.ee" className="hover:text-white transition-colors">Contact</a>
           </div>
         </div>
         <div className="mt-8 pt-8 border-t border-white/10 text-center text-white/40 text-sm">

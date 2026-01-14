@@ -1,17 +1,24 @@
 ﻿@import "tailwindcss";
 
 :root {
+  /* Color Palette */
   --color-primary: #1A2A3A;
   --color-secondary: #4A90E2;
   --color-accent: #00C2A8;
   --color-background: #F7F9FB;
+  --color-background-alt: #FFFFFF;
   --color-text: #0D1B2A;
   
+  /* Spacing Scale: 8 / 16 / 24 / 40 / 64 */
   --spacing-xs: 8px;
   --spacing-s: 16px;
   --spacing-m: 24px;
   --spacing-l: 40px;
   --spacing-xl: 64px;
+  
+  /* Section padding */
+  --section-padding-desktop: 80px;
+  --section-padding-mobile: 48px;
 }
 
 html {
@@ -23,4 +30,28 @@ body {
   color: var(--color-text);
   background: var(--color-background);
   line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--color-primary);
+}
+
+p {
+  line-height: 1.55;
+}
+
+/* Mobile typography improvements */
+@media (max-width: 768px) {
+  body {
+    line-height: 1.6;
+  }
+  
+  p {
+    line-height: 1.65;
+  }
 }

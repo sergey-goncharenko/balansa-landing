@@ -40,21 +40,21 @@ export default function TrustSection() {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section ref={ref} className="py-[var(--spacing-xl)] bg-white">
-      <div className="max-w-6xl mx-auto px-6">
+    <section ref={ref} className="py-16 md:py-24 bg-white">
+      <div className="max-w-6xl mx-auto px-5 md:px-6">
         <motion.div
           variants={staggerContainer}
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-16"
         >
           <motion.span variants={fadeInUp} className="inline-block px-3 py-1 rounded-full bg-[var(--color-primary)]/10 text-[var(--color-primary)] text-sm font-medium mb-4">
             Security First
           </motion.span>
-          <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold text-[var(--color-primary)] mb-6">
+          <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-semibold text-[var(--color-primary)] mb-4 md:mb-6">
             Your Data, Protected
           </motion.h2>
-          <motion.p variants={fadeInUp} className="text-lg text-[var(--color-text)]/70 max-w-2xl mx-auto">
+          <motion.p variants={fadeInUp} className="text-base md:text-lg text-[var(--color-text)]/70 max-w-2xl mx-auto leading-relaxed">
             We take security as seriously as you do. Here&apos;s how we keep your financial data safe.
           </motion.p>
         </motion.div>
@@ -63,19 +63,19 @@ export default function TrustSection() {
           variants={staggerContainer}
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
-          className="grid md:grid-cols-3 gap-8"
+          className="grid md:grid-cols-3 gap-6 md:gap-8"
         >
           {trustPoints.map((point, i) => (
             <motion.div
               key={i}
               variants={fadeInUp}
-              className="p-6 rounded-2xl bg-[var(--color-background)] border border-[var(--color-primary)]/5 text-center"
+              className="p-6 md:p-8 rounded-2xl bg-[var(--color-background)] border border-[var(--color-primary)]/10 text-center hover:shadow-lg transition-shadow duration-300"
             >
               <div className="w-14 h-14 mx-auto mb-4 rounded-full bg-[var(--color-accent)]/10 flex items-center justify-center text-[var(--color-accent)]">
                 {point.icon}
               </div>
               <h3 className="text-lg font-semibold text-[var(--color-primary)] mb-2">{point.title}</h3>
-              <p className="text-[var(--color-text)]/60 text-sm">{point.description}</p>
+              <p className="text-[var(--color-text)]/60 text-sm leading-relaxed">{point.description}</p>
             </motion.div>
           ))}
         </motion.div>

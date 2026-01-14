@@ -43,21 +43,21 @@ export default function HowItWorks() {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section ref={ref} className="py-[var(--spacing-xl)] bg-[var(--color-background)]">
-      <div className="max-w-6xl mx-auto px-6">
+    <section ref={ref} className="py-12 md:py-20 bg-[var(--color-background)]">
+      <div className="max-w-6xl mx-auto px-6 md:px-8">
         <motion.div
           variants={staggerContainer}
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-16"
         >
-          <motion.span variants={fadeInUp} className="inline-block px-3 py-1 rounded-full bg-[var(--color-accent)]/10 text-[var(--color-accent)] text-sm font-medium mb-4">
+          <motion.span variants={fadeInUp} className="inline-block px-3 py-1.5 rounded-full bg-[var(--color-accent)]/10 text-[var(--color-accent)] text-sm font-medium mb-5">
             Simple Setup
           </motion.span>
-          <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold text-[var(--color-primary)] mb-6">
+          <motion.h2 variants={fadeInUp} className="text-2xl sm:text-3xl md:text-[2rem] font-semibold text-[var(--color-primary)] mb-4">
             How It Works
           </motion.h2>
-          <motion.p variants={fadeInUp} className="text-lg text-[var(--color-text)]/70 max-w-2xl mx-auto">
+          <motion.p variants={fadeInUp} className="text-base md:text-lg text-[var(--color-text)]/70 max-w-xl mx-auto">
             Get started in minutes. No complex setup, no spreadsheets, no manual categorization.
           </motion.p>
         </motion.div>
@@ -66,7 +66,7 @@ export default function HowItWorks() {
           variants={staggerContainer}
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
-          className="grid md:grid-cols-3 gap-8"
+          className="grid md:grid-cols-3 gap-8 md:gap-10"
         >
           {steps.map((step, i) => (
             <motion.div
@@ -76,21 +76,21 @@ export default function HowItWorks() {
             >
               {/* Connector line */}
               {i < steps.length - 1 && (
-                <div className="hidden md:block absolute top-12 left-[60%] w-[80%] h-[2px] bg-[var(--color-accent)]/20" />
+                <div className="hidden md:block absolute top-10 left-[60%] w-[80%] h-[2px] bg-[var(--color-accent)]/20" />
               )}
               
               {/* Step circle */}
-              <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-white border-2 border-[var(--color-accent)]/20 flex items-center justify-center relative">
+              <div className="w-20 h-20 md:w-24 md:h-24 mx-auto mb-5 rounded-full bg-white border-2 border-[var(--color-accent)]/20 flex items-center justify-center relative shadow-sm">
                 <div className="text-[var(--color-accent)]">
                   {step.icon}
                 </div>
-                <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-[var(--color-accent)] text-white text-sm font-bold flex items-center justify-center">
+                <div className="absolute -top-1 -right-1 w-7 h-7 md:w-8 md:h-8 rounded-full bg-[var(--color-accent)] text-white text-sm font-semibold flex items-center justify-center">
                   {step.number}
                 </div>
               </div>
               
-              <h3 className="text-xl font-semibold text-[var(--color-primary)] mb-3">{step.title}</h3>
-              <p className="text-[var(--color-text)]/60">{step.description}</p>
+              <h3 className="text-lg md:text-xl font-semibold text-[var(--color-primary)] mb-2">{step.title}</h3>
+              <p className="text-sm md:text-base text-[var(--color-text)]/60 leading-relaxed">{step.description}</p>
             </motion.div>
           ))}
         </motion.div>
