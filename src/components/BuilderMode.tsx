@@ -5,8 +5,8 @@ import { fadeInUp, staggerContainer } from '@/lib/animations';
 
 export default function BuilderMode() {
   return (
-    <section className="py-12 md:py-20 bg-white">
-      <div className="max-w-6xl mx-auto px-6 md:px-8">
+    <section className="py-16 md:py-24 bg-white">
+      <div className="max-w-6xl mx-auto px-6 md:px-6">
         <motion.div
           variants={staggerContainer}
           initial="hidden"
@@ -44,7 +44,7 @@ export default function BuilderMode() {
               </svg>
               Builder Mode
             </span>
-            <h2 className="text-2xl sm:text-3xl md:text-[2rem] font-semibold text-[var(--color-primary)] mb-4 leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-[2rem] font-bold text-[var(--color-primary)] mb-4 leading-tight">
               Plan Ahead
             </h2>
             <p className="text-base md:text-lg text-[var(--color-text)]/70 mb-6 leading-relaxed">

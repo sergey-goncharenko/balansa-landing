@@ -21,7 +21,7 @@ export default function Hero() {
         {/* Main headline */}
         <motion.h1 
           variants={fadeInUp}
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-semibold text-[var(--color-primary)] mb-5 md:mb-6 leading-[1.2]"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold text-[var(--color-primary)] mb-5 md:mb-6 leading-[1.2]"
         >
           Your personal AI{' '}
           <span className="text-[var(--color-accent)]">financial guardian.</span>

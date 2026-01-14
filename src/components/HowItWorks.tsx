@@ -39,8 +39,8 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section className="py-12 md:py-20 bg-[var(--color-background)]">
-      <div className="max-w-6xl mx-auto px-6 md:px-8">
+    <section className="py-16 md:py-24 bg-white">
+      <div className="max-w-6xl mx-auto px-6 md:px-6">
         <motion.div
           variants={staggerContainer}
           initial="hidden"
@@ -51,7 +51,7 @@ export default function HowItWorks() {
           <motion.span variants={fadeInUp} className="inline-block px-3 py-1.5 rounded-full bg-[var(--color-accent)]/10 text-[var(--color-accent)] text-sm font-medium mb-5">
             Simple Setup
           </motion.span>
-          <motion.h2 variants={fadeInUp} className="text-2xl sm:text-3xl md:text-[2rem] font-semibold text-[var(--color-primary)] mb-4">
+          <motion.h2 variants={fadeInUp} className="text-2xl sm:text-3xl md:text-[2rem] font-bold text-[var(--color-primary)] mb-4">
             How It Works
           </motion.h2>
           <motion.p variants={fadeInUp} className="text-base md:text-lg text-[var(--color-text)]/70 max-w-xl mx-auto">

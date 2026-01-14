@@ -14,15 +14,15 @@ const privacyPoints = [
 
 export default function TrustSection() {
   return (
-    <section className="py-16 md:py-24 bg-white">
-      <div className="max-w-4xl mx-auto px-5 md:px-6">
+    <section className="py-16 md:py-24 bg-[var(--color-background)]">
+      <div className="max-w-4xl mx-auto px-6 md:px-6">
         <motion.div
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-50px' }}
         >
-          <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-semibold text-[var(--color-primary)] mb-4 md:mb-6 text-center">
+          <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold text-[var(--color-primary)] mb-4 md:mb-6 text-center">
             Privacy and security built in from day one
           </motion.h2>
           <motion.p variants={fadeInUp} className="text-base md:text-lg text-[var(--color-text)]/70 max-w-2xl mx-auto leading-relaxed text-center mb-10 md:mb-12">
