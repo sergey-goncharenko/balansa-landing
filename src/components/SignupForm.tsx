@@ -1,12 +1,10 @@
 ﻿'use client';
 
-import { motion, useInView } from 'framer-motion';
-import { useRef, useState } from 'react';
+import { motion } from 'framer-motion';
+import { useState } from 'react';
 import { fadeInUp, staggerContainer } from '@/lib/animations';
 
 export default function SignupForm() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [message, setMessage] = useState('');
@@ -35,13 +33,19 @@ export default function SignupForm() {
   };
 
   return (
-    <section id="signup" ref={ref} className="py-20 md:py-28 bg-[var(--color-background)] relative overflow-hidden">
+    <section id="signup" className="py-20 md:py-28 bg-[var(--color-background)] relative overflow-hidden">
       <div className="absolute inset-0">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[var(--color-accent)]/5 rounded-full blur-3xl" />
       </div>
 
       <div className="max-w-4xl mx-auto px-5 md:px-6 relative z-10">
-        <motion.div variants={staggerContainer} initial="hidden" animate={isInView ? 'visible' : 'hidden'} className="text-center">
+        <motion.div 
+          variants={staggerContainer} 
+          initial="hidden" 
+          whileInView="visible"
+          viewport={{ once: true, margin: '-50px' }}
+          className="text-center"
+        >
           <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-semibold text-[var(--color-primary)] mb-4 md:mb-6">
             Ready to take control?
           </motion.h2>

@@ -20,7 +20,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-8 pt-8 border-t border-white/10 text-center text-white/40 text-sm">
-          <p>© 2025 Balansa. All rights reserved.</p>
+          <p>© 2026 Balansa. All rights reserved.</p>
         </div>
       </div>
     </footer>

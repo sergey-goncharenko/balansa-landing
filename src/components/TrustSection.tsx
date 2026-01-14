@@ -1,7 +1,6 @@
 'use client';
 
-import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { motion } from 'framer-motion';
 import { fadeInUp, staggerContainer } from '@/lib/animations';
 
 const privacyPoints = [
@@ -14,16 +13,14 @@ const privacyPoints = [
 ];
 
 export default function TrustSection() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
-
   return (
-    <section ref={ref} className="py-16 md:py-24 bg-white">
+    <section className="py-16 md:py-24 bg-white">
       <div className="max-w-4xl mx-auto px-5 md:px-6">
         <motion.div
           variants={staggerContainer}
           initial="hidden"
-          animate={isInView ? 'visible' : 'hidden'}
+          whileInView="visible"
+          viewport={{ once: true, margin: '-50px' }}
         >
           <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-semibold text-[var(--color-primary)] mb-4 md:mb-6 text-center">
             Privacy and security built in from day one
@@ -32,7 +29,13 @@ export default function TrustSection() {
             Balansa is designed with a simple principle: your financial data belongs to you, and only you.
           </motion.p>
 
-          <motion.ul variants={staggerContainer} className="space-y-4 md:space-y-5">
+          <motion.ul 
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-50px' }}
+            className="space-y-4 md:space-y-5"
+          >
             {privacyPoints.map((point, i) => (
               <motion.li
                 key={i}
