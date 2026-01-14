@@ -55,3 +55,20 @@ p {
     line-height: 1.65;
   }
 }
+
+/* Fallback for browsers where Framer Motion animations may not trigger */
+@supports not (animation-timeline: scroll()) {
+  section {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* Ensure motion elements are visible after short delay as fallback */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

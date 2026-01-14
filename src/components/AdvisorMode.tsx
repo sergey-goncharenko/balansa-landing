@@ -1,20 +1,17 @@
 ﻿'use client';
 
-import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { motion } from 'framer-motion';
 import { fadeInUp, staggerContainer } from '@/lib/animations';
 
 export default function AdvisorMode() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
-
   return (
-    <section ref={ref} className="py-12 md:py-20 bg-[var(--color-background)]">
+    <section className="py-12 md:py-20 bg-[var(--color-background)]">
       <div className="max-w-6xl mx-auto px-6 md:px-8">
         <motion.div
           variants={staggerContainer}
           initial="hidden"
-          animate={isInView ? 'visible' : 'hidden'}
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
           className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center"
         >
           <motion.div variants={fadeInUp}>

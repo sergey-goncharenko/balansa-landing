@@ -1,7 +1,6 @@
 'use client';
 
-import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { motion } from 'framer-motion';
 import { fadeInUp, staggerContainer } from '@/lib/animations';
 
 const steps = [
@@ -39,16 +38,14 @@ const steps = [
 ];
 
 export default function HowItWorks() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
-
   return (
-    <section ref={ref} className="py-12 md:py-20 bg-[var(--color-background)]">
+    <section className="py-12 md:py-20 bg-[var(--color-background)]">
       <div className="max-w-6xl mx-auto px-6 md:px-8">
         <motion.div
           variants={staggerContainer}
           initial="hidden"
-          animate={isInView ? 'visible' : 'hidden'}
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
           className="text-center mb-12 md:mb-16"
         >
           <motion.span variants={fadeInUp} className="inline-block px-3 py-1.5 rounded-full bg-[var(--color-accent)]/10 text-[var(--color-accent)] text-sm font-medium mb-5">
@@ -65,7 +62,8 @@ export default function HowItWorks() {
         <motion.div
           variants={staggerContainer}
           initial="hidden"
-          animate={isInView ? 'visible' : 'hidden'}
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
           className="grid md:grid-cols-3 gap-8 md:gap-10"
         >
           {steps.map((step, i) => (
