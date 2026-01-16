@@ -4,6 +4,13 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { fadeInUp, staggerContainer } from '@/lib/animations';
 
+// Declare gtag for TypeScript
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+  }
+}
+
 export default function SignupForm() {
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
@@ -23,6 +30,13 @@ export default function SignupForm() {
         setStatus('success');
         setMessage('You are on the list! We will be in touch soon.');
         setEmail('');
+        
+        // Track conversion in GA4
+        if (typeof window !== 'undefined' && window.gtag) {
+          window.gtag('event', 'sign_up', {
+            method: 'email_waitlist',
+          });
+        }
       } else {
         throw new Error('Failed');
       }
