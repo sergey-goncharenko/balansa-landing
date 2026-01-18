@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- Background -->
+  <rect width="32" height="32" fill="#1A2A3A"/>
+  <!-- Border/Frame -->
+  <rect x="4" y="4" width="24" height="24" fill="none" stroke="#ffffff" stroke-width="1.5" opacity="0.6"/>
+  <!-- Balance line -->
+  <rect x="8" y="15" width="16" height="2" fill="#ffffff"/>
+</svg>

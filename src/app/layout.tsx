@@ -10,6 +10,12 @@ const GA_MEASUREMENT_ID = 'G-RCY1N697RN';
 export const metadata: Metadata = {
   title: 'Balansa - Your AI Financial Guardian and Coach',
   description: 'An ambient AI that monitors your finances 24/7.',
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+    ],
+    apple: '/apple-touch-icon.svg',
+  },
 };
 
 export default function RootLayout({
